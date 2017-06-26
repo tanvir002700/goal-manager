@@ -5,12 +5,15 @@ import {firebaseApp} from './config/firebase';
 import App from './components/app';
 import SignIn from './components/sign_in';
 import SignUp from './components/sign_up';
+import Redux from 'redux';
 
 firebaseApp.auth().onAuthStateChanged(user => {
     if(user) {
         console.log('user is signed in or up ', user);
+        browserHistory.push('/app');
     } else {
         console.log('user not found.');
+        browserHistory.replace('/sign_in');
     }
 });
 
