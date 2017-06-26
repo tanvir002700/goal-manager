@@ -1,6 +1,4 @@
+import * as firebase from 'firebase';
 import config from './secrets';
 
-export default function() {
-    console.log('Calling');
-    console.log(config);
-}
+export const firebaseApp = firebase.initializeApp(config);
