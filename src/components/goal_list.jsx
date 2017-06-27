@@ -19,7 +19,16 @@ class GoalList extends Component {
     render() {
         console.log('Goals from props: ', this.props.goals);
         return(
-            <div>Goal List...</div>
+            <div>
+                <h2>Goal List</h2>
+                <ul>
+                    {
+                        this.props.goals.map( (goal, key) => {
+                            return <li key={key}>{goal.goal}</li>
+                        })
+                    }
+                </ul>
+            </div>
         );
     }
 }
