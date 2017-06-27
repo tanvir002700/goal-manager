@@ -1,0 +1,1 @@
+<a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/tanvir002700/goal-manager/badges/gpa.svg" /></a>
