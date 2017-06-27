@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import user from './user_reducer';
 import goals from './goal_reducer';
+import completeGoals from './complete_goal_reducer';
 
 export default combineReducers({
     user,
-    goals
+    goals,
+    completeGoals
 });
