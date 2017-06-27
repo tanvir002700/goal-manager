@@ -11,7 +11,6 @@ class App extends Component {
     }
 
     renderUserDetails() {
-        console.log(this.props);
         const {user} = this.props;
         return(
             <div>email: {user.email}</div>
@@ -35,7 +34,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     const {user} = state;
     return {user};
 }

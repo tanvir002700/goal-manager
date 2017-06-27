@@ -14,12 +14,10 @@ const store = createStore(allReducers);
 
 firebaseApp.auth().onAuthStateChanged(user => {
     if(user) {
-        console.log('user is signed in or up ', user);
         const {email} = user;
         store.dispatch(logUser(email));
         browserHistory.push('/app');
     } else {
-        console.log('user not found.');
         browserHistory.replace('/sign_in');
     }
 });

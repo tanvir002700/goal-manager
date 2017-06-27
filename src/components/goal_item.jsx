@@ -6,13 +6,11 @@ class GoalItem extends Component {
     completeGoal() {
         const {user} = this.props;
         const {goal} = this.props;
-        console.log(goal);
         goalRef.child(goal.serverKey).remove();
         completeGoalRef.push({completedBy: user, goal});
     }
 
     render() {
-        console.log('goal item props: ', this.props);
         const {goal} = this.props;
         return(
             <div>

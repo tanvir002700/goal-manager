@@ -5,7 +5,6 @@ let user = {
 }
 
 export default function (state=user, action) {
-    console.log('Set here change state: ', action);
     switch (action.type){
         case SIGNED_IN:
             const {email} = action;
