@@ -1,4 +1,4 @@
-import {SET_GOALS, SET_COMPLETED} from '../constants';
+import {SET_GOALS} from '../constants';
 
 export default function (state = [], action) {
     switch (action.type){

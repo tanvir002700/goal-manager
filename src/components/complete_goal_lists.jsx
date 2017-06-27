@@ -22,8 +22,8 @@ class CompleteGoalLists extends Component {
             <div>
                 <h2>Complete Goal List</h2>
                 {
-                    completeGoals.map(completeGoal => {
-                        return <CompleteGoalItem completeGoal={completeGoal}/>
+                    completeGoals.map( (completeGoal, key) => {
+                        return <CompleteGoalItem completeGoal={completeGoal} key={key} />
                     })
                 }
             </div>
