@@ -10,7 +10,8 @@ class GoalList extends Component {
             let goals = [];
             snap.forEach(goal => {
                 let goalObject = goal.val();
-                console.log(goalObject);
+                let serverKey = goal.key;
+                goalObject['serverKey'] = serverKey;
                 goals.push(goalObject);
             });
             this.props.setGoal(goals);
