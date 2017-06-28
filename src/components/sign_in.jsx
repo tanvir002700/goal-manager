@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {firebaseApp} from '../config/firebase';
 import {Link} from 'react-router';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class SignIn extends Component {
     constructor(props) {
@@ -33,9 +35,7 @@ class SignIn extends Component {
                     <input type="password" className="form-control" placeholder="password"
                            onChange={event => this.setState({password: event.target.value})}
                     />
-                    <button className="btn btn-primary" type="button"
-                            onClick={() => this.signIn()}
-                    >Sign In</button>
+                    <RaisedButton label="Sign In" primary={true} onTouchTap={() => this.signIn()}/>
                 </div>
                 <div>{this.state.error.message}</div>
                 <div><Link to={'/sign_up'}> Sign Up instead. </Link></div>

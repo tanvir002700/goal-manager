@@ -14,6 +14,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const store = createStore(allReducers);
 
+injectTapEventPlugin();
+
 firebaseApp.auth().onAuthStateChanged(user => {
     if(user) {
         const {email} = user;
@@ -27,12 +29,12 @@ firebaseApp.auth().onAuthStateChanged(user => {
 
 ReactDOM.render(
     <MuiThemeProvider>
-    <Provider store={store}>
-        <Router path="/" history={browserHistory}>
-            <Route path='/app' component={App}/>
-            <Route path='sign_in' component={SignIn}/>
-            <Route path='sign_up' component={SignUp}/>
-        </Router>
-    </Provider>
+        <Provider store={store}>
+            <Router path="/" history={browserHistory}>
+                <Route path='/app' component={App}/>
+                <Route path='sign_in' component={SignIn}/>
+                <Route path='sign_up' component={SignUp}/>
+            </Router>
+        </Provider>
     </MuiThemeProvider>, document.getElementById('root')
 );

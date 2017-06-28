@@ -4,13 +4,12 @@ import {firebaseApp} from '../config/firebase';
 import AddGoal from './add_goal';
 import GoalList from './goal_list';
 import CompleteGoalLists from './complete_goal_lists';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import Paper from 'material-ui/Paper';
 
-injectTapEventPlugin();
 class App extends Component {
     constructor(props) {
         super(props);
