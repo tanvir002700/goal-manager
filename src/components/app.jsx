@@ -9,6 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Paper from 'material-ui/Paper';
+import {browserHistory} from 'react-router';
 
 class App extends Component {
     constructor(props) {
@@ -28,6 +29,12 @@ class App extends Component {
 
     handleToggle = () => this.setState({open: !this.state.open});
 
+    goto_page(page) {
+        this.setState({open: false}, () => {
+            browserHistory.push(page);
+        })
+    }
+
     render() {
         return(
             <div>
@@ -41,7 +48,8 @@ class App extends Component {
                         title='Goal Manager'
                         zDepth={0}
                         onLeftIconButtonTouchTap={this.handleToggle} />
-                    <MenuItem>Menu Item</MenuItem>
+                    <MenuItem onClick={() => this.goto_page('/app/goal_list')}>Goal List</MenuItem>
+                    <MenuItem onClick={() => this.goto_page('/app/complete_goal_lists')}>Complete Goal Lists</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
                     <MenuItem primaryText="Sign out" onTouchTap={() => this.signOut()}/>
                 </Drawer>
