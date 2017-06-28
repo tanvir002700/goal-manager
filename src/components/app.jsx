@@ -35,25 +35,23 @@ class App extends Component {
                 <AppBar
                     title="Goal Manager"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
-                />
-                <RaisedButton
-                    label="Toggle Drawer"
-                    onTouchTap={this.handleToggle}
+                    onLeftIconButtonTouchTap={this.handleToggle}
                 />
                 <Drawer open={this.state.open}>
+                    <AppBar
+                        title='Goal Manager'
+                        zDepth={0}
+                        onLeftIconButtonTouchTap={this.handleToggle} />
                     <MenuItem>Menu Item</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
-                    <MenuItem>
-                        <RaisedButton label="Sign Out" secondary={true} onClick={() => this.signOut()} />
-                    </MenuItem>
+                    <MenuItem primaryText="Sign out" onTouchTap={() => this.signOut()}/>
                 </Drawer>
 
-                {/*<h2>Goal</h2>*/}
-                {/*{this.renderUserDetails()}*/}
-                {/*<AddGoal/>*/}
-                {/*<GoalList/>*/}
-                {/*<CompleteGoalLists/>*/}
-
+                <h2>Goal</h2>
+                {this.renderUserDetails()}
+                <AddGoal/>
+                <GoalList/>
+                <CompleteGoalLists/>
             </div>
         );
     };
