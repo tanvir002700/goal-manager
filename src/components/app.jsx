@@ -45,12 +45,12 @@ class App extends Component {
                     <MenuItem>Menu Item 2</MenuItem>
                     <MenuItem primaryText="Sign out" onTouchTap={() => this.signOut()}/>
                 </Drawer>
-
-                <h2>Goal</h2>
-                {this.renderUserDetails()}
-                <AddGoal/>
-                <GoalList/>
-                <CompleteGoalLists/>
+                {this.props.children}
+                {/*<h2>Goal</h2>*/}
+                {/*{this.renderUserDetails()}*/}
+                {/*<AddGoal/>*/}
+                {/*<GoalList/>*/}
+                {/*<CompleteGoalLists/>*/}
             </div>
         );
     };
