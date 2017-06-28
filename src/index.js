@@ -9,6 +9,8 @@ import SignIn from './components/sign_in';
 import SignUp from './components/sign_up';
 import allReducers from './reducers';
 import {logUser} from './actions/signed_in';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const store = createStore(allReducers);
 
@@ -22,12 +24,15 @@ firebaseApp.auth().onAuthStateChanged(user => {
     }
 });
 
+
 ReactDOM.render(
+    <MuiThemeProvider>
     <Provider store={store}>
         <Router path="/" history={browserHistory}>
             <Route path='/app' component={App}/>
             <Route path='sign_in' component={SignIn}/>
             <Route path='sign_up' component={SignUp}/>
         </Router>
-    </Provider>, document.getElementById('root')
+    </Provider>
+    </MuiThemeProvider>, document.getElementById('root')
 );
