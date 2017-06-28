@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {firebaseApp} from '../config/firebase';
 import Paper from 'material-ui/Paper';
 import Layout from './layout';
+import '../assets/stylesheets/paper.css';
 
 
 class App extends Component {
@@ -10,12 +10,9 @@ class App extends Component {
         return(
             <div>
                 <Layout/>
+                <Paper className="canvas" zDepth={5}>
                 {this.props.children}
-                {/*<h2>Goal</h2>*/}
-                {/*{this.renderUserDetails()}*/}
-                {/*<AddGoal/>*/}
-                {/*<GoalList/>*/}
-                {/*<CompleteGoalLists/>*/}
+                </Paper>
             </div>
         );
     };

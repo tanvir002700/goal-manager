@@ -1,0 +1,9 @@
+.canvas {
+    background: red;
+    width: 45%;
+    height: 35em;
+    overflow: auto;
+    margin-top: 5%;
+    margin-left: 25%;
+    padding: 1%;
+}

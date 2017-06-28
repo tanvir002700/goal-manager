@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {firebaseApp} from '../config/firebase';
 import {Link} from 'react-router';
+import '../assets/stylesheets/paper.css';
 
 class SignUp extends Component {
     constructor(props) {
