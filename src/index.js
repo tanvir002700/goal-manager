@@ -14,6 +14,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import AddGoal from './components/add_goal';
 import GoalList from './components/goal_list';
 import CompleteGoalLists from './components/complete_goal_lists';
+import UserDetails from './components/user_details';
 
 const store = createStore(allReducers);
 
@@ -23,7 +24,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
     if(user) {
         const {email} = user;
         store.dispatch(logUser(email));
-        // browserHistory.push('/app');
+        browserHistory.push('/app');
     } else {
         browserHistory.replace('/sign_in');
     }
@@ -35,7 +36,8 @@ ReactDOM.render(
         <Provider store={store}>
             <Router path="/" history={browserHistory}>
                 <Route path='app' component={App}>
-                    <IndexRoute component={AddGoal}></IndexRoute>
+                    <IndexRoute component={UserDetails}></IndexRoute>
+                    <Route path="add_goal" components={AddGoal}/>
                     <Route path='goal_list' component={GoalList}/>
                     <Route path='complete_goal_lists' component={CompleteGoalLists}/>
                 </Route>
